@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--light-->
+    <color name="colorAccent">#0088CC</color>
+    <color name="colorBtnAccent">#67bf74</color>
+    <color name="textColorAccent">#ffffff</color>
+</resources>

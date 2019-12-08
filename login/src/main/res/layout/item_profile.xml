@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium">
+
+    <com.devandfun.mytravel.base.ui.views.ProfileNameView
+            android:id="@+id/vProfileNameView"
+            android:layout_width="@dimen/person_name_size"
+            android:layout_height="@dimen/person_name_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/vProfileNameLbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            app:layout_constraintLeft_toLeftOf="@+id/vProfileNameView"
+            app:layout_constraintRight_toRightOf="@+id/vProfileNameView"
+            app:layout_constraintTop_toBottomOf="@+id/vProfileNameView"
+            tools:text="Barbara Smith" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

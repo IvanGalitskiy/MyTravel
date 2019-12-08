@@ -1,0 +1,18 @@
+ext.deps = [:]
+def versions = [:]
+
+versions.lifecycle = "2.1.0"
+versions.room = "2.2.2"
+versions.coroutines = "1.3.2"
+
+def jetpack = [:]
+jetpack.viewmodel = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+jetpack.room = "androidx.room:room-runtime:$versions.room"
+jetpack.room_coroutines = "androidx.room:room-ktx:$versions.room"
+deps.jetpack=jetpack
+
+def core = [:]
+core.coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+deps.core=core
+
+ext.deps = deps

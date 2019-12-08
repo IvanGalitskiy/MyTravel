@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/vLoginAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/colorAccent"
+            android:orientation="vertical">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:contentScrim="@color/colorAccent"
+                app:expandedTitleGravity="top"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/welcome_back"
+                    android:textColor="@color/textColorAccent"
+                    android:textSize="@dimen/text_size_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:background="@color/colorAccent" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vProfilesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:itemCount="20"
+            tools:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
+            tools:layout_marginTop="300dp"
+            tools:listitem="@layout/item_profile" />
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorBtnAccent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:contentPadding="8dp"
+            app:layout_anchor="@+id/vLoginAppBar"
+            app:layout_anchorGravity="bottom|center">
+
+        <TextView
+                android:id="@+id/vSelectProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/select_your_profile"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorAccent"
+                android:textSize="@dimen/text_size_secondary_title" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
