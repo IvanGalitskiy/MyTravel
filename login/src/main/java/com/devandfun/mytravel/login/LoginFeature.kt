@@ -2,7 +2,7 @@ package com.devandfun.mytravel.login
 
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
-import com.devandfun.mytravel.domain.entities.Profile
+import com.devandfun.mytravel.base.entities.Profile
 import com.devandfun.mytravel.login.ui.LoginFragment
 
 object LoginFeature {

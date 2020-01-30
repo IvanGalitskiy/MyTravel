@@ -1,10 +1,7 @@
 package com.devandfun.mytravel.base.ui.views
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Rect
+import android.graphics.*
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.View
@@ -18,9 +15,10 @@ class ProfileNameView @JvmOverloads constructor(
     defRes: Int = 0,
     defStyle: Int = 0
 ) : View(context, attrs, defRes, defStyle) {
-    lateinit var colorsArray: IntArray
+    private lateinit var colorsArray: IntArray
     private val bgPaint = Paint()
     private val textPaint = Paint()
+    private val defaultStroke = Paint()
     private val textBounds = Rect()
     var name: String = ""
         set(value) {
@@ -40,29 +38,53 @@ class ProfileNameView @JvmOverloads constructor(
         textPaint.style = Paint.Style.FILL
         textPaint.textSize =
             context.resources.getDimensionPixelSize(R.dimen.profile_name_text_size).toFloat()
+        defaultStroke.style = Paint.Style.STROKE
+        defaultStroke.pathEffect = DashPathEffect(
+            arrayOf(
+                DASH_LENGTH_IN_PIXELS,
+                DASH_SPACE_LENGTH_IN_PIXELS
+            ).toFloatArray(), 0f
+        )
+        defaultStroke.strokeWidth = STROKE_WIDTH_IN_PIXELS
+        defaultStroke.color = context.getColor(R.color.gray)
+        bgPaint.color = colorsArray.random()
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        bgPaint.color = colorsArray.random()
         canvas?.apply {
-            drawCircle(width / 2f, height / 2f, width / 2f, bgPaint)
-            textPaint.getTextBounds(name, 0, 2, textBounds)
-//            drawRect(
-//                width / 2f - textBounds.width() / 2f,
-//                height / 2f - textPaint.textSize / 2f,
-//                width / 2f + textBounds.width() / 2f,
-//                height / 2f + textPaint.textSize / 2f,
-//                textPaint
-//            )
-            drawText(
-                name.toCharArray(),
-                0,
-                2,
-                (width / 2f - textBounds.width() / 2f),
-                height / 2f + textBounds.height() / 2f,
-                textPaint
-            )
+            if (name.isBlank()) {
+                drawCircle(
+                    width / 2f,
+                    height / 2f,
+                    width / 2f - STROKE_WIDTH_IN_PIXELS / 2f,
+                    defaultStroke
+                )
+            } else {
+                drawCircle(width / 2f, height / 2f, width / 2f, bgPaint)
+                val textLength =
+                if (name.length >= 2) {
+                    2
+                } else {
+                    name.length
+                }
+                textPaint.getTextBounds(name, 0, textLength, textBounds)
+                drawText(
+                    name.toCharArray(),
+                    0,
+                    textLength,
+                    (width / 2f - textBounds.width() / 2f),
+                    height / 2f + textBounds.height() / 2f,
+                    textPaint
+                )
+            }
+
         }
+    }
+
+    companion object {
+        private const val DASH_LENGTH_IN_PIXELS = 48f
+        private const val DASH_SPACE_LENGTH_IN_PIXELS = 16f
+        private const val STROKE_WIDTH_IN_PIXELS = 8f
     }
 }

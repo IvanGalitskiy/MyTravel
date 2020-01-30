@@ -3,4 +3,12 @@
     <declare-styleable name="ProfileNameView">
         <attr name="bg_colors" format="reference"/>
     </declare-styleable>
+    <declare-styleable name="DraggableView">
+        <attr name="bdv_draggableView" format="reference" />
+        <attr name="bdv_expanded" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="InputSectionView">
+        <attr name="is_section_name" format="string"/>
+        <attr name="is_section_hint" format="string"/>
+    </declare-styleable>
 </resources>

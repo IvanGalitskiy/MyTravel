@@ -13,7 +13,7 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseHolder<T>>() {
         return items.size
     }
 
-    public fun setItems(newItems:Collection<T>){
+    open fun setItems(newItems:Collection<T>){
         items.clear()
         items.addAll(newItems)
         notifyDataSetChanged()

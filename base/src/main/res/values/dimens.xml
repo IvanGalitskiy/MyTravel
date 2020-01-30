@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="profile_name_text_size">32sp</dimen>
+
+    <dimen name="margin_tiny">2dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_xmedium">12dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_xlarge">24dp</dimen>
 </resources>

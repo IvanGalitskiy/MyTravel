@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AccentButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/accent_btn_bg</item>
+    </style>
+</resources>

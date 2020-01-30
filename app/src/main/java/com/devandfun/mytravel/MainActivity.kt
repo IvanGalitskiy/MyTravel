@@ -10,11 +10,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val loginStarter = LoginFeature.LoginStarter(
+        val appStarter = LoginFeature.LoginStarter(
             supportFragmentManager,
             vMainLayout,
-            Features.LoginDependecies()
+            Features.LoginDependencies()
         )
-        loginStarter.start()
+        appStarter.start()
     }
 }

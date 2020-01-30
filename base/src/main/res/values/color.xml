@@ -4,4 +4,7 @@
     <color name="colorAccent">#0088CC</color>
     <color name="colorBtnAccent">#67bf74</color>
     <color name="textColorAccent">#ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#E6E6E6</color>
+    <color name="cancel">#E00D0D</color>
 </resources>

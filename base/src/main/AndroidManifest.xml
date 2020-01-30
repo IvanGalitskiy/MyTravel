@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.devandfun.mytravel.base" />
+        package="com.devandfun.mytravel.base" >
+
+    <application>
+        <activity android:name=".tests.TestActivity"
+                android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+    </application>
+</manifest>

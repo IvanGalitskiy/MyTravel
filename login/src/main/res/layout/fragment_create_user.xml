@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        tools:background="@color/colorAccent"
+        tools:layout_height="300dp">
+
+    <com.devandfun.mytravel.base.ui.views.InputSectionView
+            android:id="@+id/vProfileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:is_section_name="@string/name"
+            app:layout_constraintBottom_toTopOf="@+id/vProfileLastName"
+            app:layout_constraintEnd_toEndOf="@+id/vProfileLastName"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.devandfun.mytravel.base.ui.views.InputSectionView
+            android:id="@+id/vProfileLastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:is_section_name="@string/last_name"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/vProfileNameView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vProfileName" />
+
+    <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/welcome_back"
+            android:textColor="@color/textColorAccent"
+            android:textSize="@dimen/text_size_title"
+            app:layout_constraintBottom_toTopOf="@+id/vProfileName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <com.devandfun.mytravel.base.ui.views.ProfileNameView
+            android:id="@+id/vProfileNameView"
+            android:layout_width="116dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/vProfileLastName"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/vProfileLastName"
+            app:layout_constraintTop_toTopOf="@+id/vProfileName"
+            app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+            android:id="@+id/textView2"
+            style="@style/AccentButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/create"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/vProfileNameView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vProfileLastName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
